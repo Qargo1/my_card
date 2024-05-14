@@ -1,0 +1,123 @@
+/*
+Уменьшает размер шрифта в два раза
+@media (min-width: 200px) {
+  .grid-column {
+    font-size: 0.1em; 
+  }
+}
+*/
+
+body {
+  display: grid;
+  grid-template-columns: 30% 40% 30%; 
+  grid-template-areas:
+    "main-info image-title base-info";
+  grid-gap: 0px;
+  margin: 0px;
+}
+
+main {
+  grid-area: main-info;
+  grid-column: 1;
+  display: flex;
+  flex: 1;
+  flex-basis: 500px; /* Минимальная ширина */
+  font-size: 120%;
+  font-family: 'Arial', 'Verdana', sans-serif;
+  font-weight: bold;
+  background-image: url("images/abstract-nature-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(243, 230, 236);
+  min-width: 300px;
+  max-width: 100%;
+}
+
+.background {
+  margin: 20px 15px;
+  margin-left: 20px;
+  background-image: linear-gradient(to right, rgba(124, 121, 121, 0.6), 
+    rgba(87, 81, 81, 0.5));
+}
+
+.image-title {
+  display: grid;
+  grid-template-columns: 10% 80%;
+  grid-area: image-title;
+  grid-column: 2;
+  background-image: url("images/backgroundOne.jpg");
+  background-size: cover;
+  margin: 0px;
+}
+
+.cover {
+  background-image: linear-gradient(to right, rgba(7, 7, 7, 0.7), 
+    rgba(29, 28, 28, 0.7));
+  writing-mode: vertical-lr;
+  color: rgb(243, 230, 236);
+  width: 20%;
+  height: auto;
+  margin: 0px;
+  margin-left: 0px;
+  padding: 80%;
+}
+
+.cover p { /* Стили для текста внутри .cover */
+  white-space: nowrap; /* Предотвратить перенос слов */
+}
+
+.background-title {
+  margin-top: 170%;
+  margin-left: 10%;
+  margin-bottom: 40%;
+  padding-left: 20px;
+  height: 20%;
+  background-image: linear-gradient(to right, rgba(7, 7, 7, 0.7), 
+    rgba(46, 42, 42, 0.7));
+}
+
+.background-title > p {
+  color: rgb(243, 230, 236);
+  text-align: left;
+  padding-top: 10%;
+}
+
+.base-info {
+  grid-column: 3;
+  grid-area: base-info;
+  background-color: hsl(0, 2%, 22%);
+  padding: 10px;
+}
+
+.base-info > img {
+  margin: 10px;
+  margin-left: 30px;
+  margin-top: 10px;
+  min-width: 80%;
+  max-width: 300px;
+  min-height: 30%;
+  max-height: 44%;
+}
+
+.base-info > p {
+  color: antiquewhite;
+}
+
+.background-info {
+  margin-top: 50%;
+  margin-left: 8%;
+  margin-right: 6%;
+  padding-left: 20px;
+  height: 30%;
+  background-image: linear-gradient(to right, rgba(7, 7, 7, 0.7), 
+    rgba(46, 42, 42, 0.7));
+  color: aliceblue;
+}
+
+.base-info img + p {
+  text-align: center;
+}
+
+a:hover {
+color: #a05123;
+}
