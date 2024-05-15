@@ -1,11 +1,12 @@
-/*
-Уменьшает размер шрифта в два раза
-@media (min-width: 200px) {
-  .grid-column {
-    font-size: 0.1em; 
-  }
+@font-face {
+  font-family: 'BadScript-Regular';
+  src: url('../styles/fonts/BadScript-Regular.ttf');
 }
-*/
+
+@font-face {
+  font-family: 'Calligraphia_One';
+  src: url('../styles/fonts/Calligraphia_One.ttf');
+}
 
 body {
   display: grid;
@@ -14,30 +15,47 @@ body {
     "main-info image-title base-info";
   grid-gap: 0px;
   margin: 0px;
+  margin-bottom: 100px;
 }
 
-main {
+.main-info .font-one{
+  font-family: 'Special Elite', 'Arial', 'Verdana', sans-serif;
+}
+
+.main-info .font-second {
+  font-family: 'BadScript-Regular';
+}
+
+.main-info p {
+  font-family: 'BadScript-Regular';
+}
+
+.main-info h2 {
+  -webkit-text-stroke: 0.3px #a05123;; /* Для Safari и Chrome */
+}
+
+.main-info {
   grid-area: main-info;
   grid-column: 1;
   display: flex;
   flex: 1;
   flex-basis: 500px; /* Минимальная ширина */
-  font-size: 120%;
-  font-family: 'Arial', 'Verdana', sans-serif;
+  font-size: 115%;
   font-weight: bold;
-  background-image: url("images/abstract-nature-background.png");
+  background-image: url("../styles/images/abstract-nature-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   color: rgb(243, 230, 236);
   min-width: 300px;
   max-width: 100%;
+  height: 100vh;
 }
 
 .background {
   margin: 20px 15px;
   margin-left: 20px;
-  background-image: linear-gradient(to right, rgba(124, 121, 121, 0.6), 
-    rgba(87, 81, 81, 0.5));
+  background-image: linear-gradient(to right, rgba(87, 81, 81, 0.9),
+    rgba(124, 121, 121, 0.6));
 }
 
 .image-title {
@@ -48,6 +66,7 @@ main {
   background-image: url("images/backgroundOne.jpg");
   background-size: cover;
   margin: 0px;
+  height: 100vh;
 }
 
 .cover {
@@ -55,45 +74,57 @@ main {
     rgba(29, 28, 28, 0.7));
   writing-mode: vertical-lr;
   color: rgb(243, 230, 236);
-  width: 20%;
-  height: auto;
+  height: inherit;
+  width: 180%;
   margin: 0px;
   margin-left: 0px;
-  padding: 80%;
 }
 
-.cover p { /* Стили для текста внутри .cover */
-  white-space: nowrap; /* Предотвратить перенос слов */
+.cover > p {
+  margin: 3%;
+  font-size: 140%;
+  text-shadow: 3px 3px 2px #a05123;
+  text-decoration: underline 2px black;
+  font-family: 'BadScript-Regular';
 }
 
 .background-title {
-  margin-top: 170%;
+  margin-top: 100%;
   margin-left: 10%;
-  margin-bottom: 40%;
   padding-left: 20px;
   height: 20%;
   background-image: linear-gradient(to right, rgba(7, 7, 7, 0.7), 
     rgba(46, 42, 42, 0.7));
 }
 
-.background-title > p {
+.background-title p {
   color: rgb(243, 230, 236);
   text-align: left;
   padding-top: 10%;
+  font-family: 'Calligraphia_One';
+  font-size: 50px;
+}
+
+.background-title ul {
+  color: rgb(243, 230, 236);
+  text-align: left;
+  padding-top: 10%;
+  font-family: 'Calligraphia_One';
+  font-size: 50px;
 }
 
 .base-info {
   grid-column: 3;
   grid-area: base-info;
   background-color: hsl(0, 2%, 22%);
-  padding: 10px;
+  height: 100vh;
 }
 
 .base-info > img {
   margin: 10px;
   margin-left: 30px;
   margin-top: 10px;
-  min-width: 80%;
+  min-width: 50%;
   max-width: 300px;
   min-height: 30%;
   max-height: 44%;
@@ -101,10 +132,11 @@ main {
 
 .base-info > p {
   color: antiquewhite;
+  font-family: 'BadScript-Regular';
 }
 
 .background-info {
-  margin-top: 50%;
+  margin-top: 20%;
   margin-left: 8%;
   margin-right: 6%;
   padding-left: 20px;
@@ -114,8 +146,24 @@ main {
   color: aliceblue;
 }
 
+.background-info p, h2, h1 {
+  font-family: 'BadScript-Regular';
+}
+
+a {
+  font-family: 'Courier New', Courier, monospace
+}
+
 .base-info img + p {
   text-align: center;
+}
+
+strong {
+  color: antiquewhite;
+}
+
+a {
+  color: antiquewhite;
 }
 
 a:hover {
